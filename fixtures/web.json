@@ -1,0 +1,7 @@
+{
+  "*": [
+    { "position": 1, "title": "Sample result one (offline fixture)", "link": "https://example.com/one", "snippet": "Offline fixture data, returned for any query when provider = 'fixture'.", "source": "example.com" },
+    { "position": 2, "title": "Sample result two (offline fixture)", "link": "https://example.org/two", "snippet": "Add entries keyed by a lowercase query to fixtures/web.json for specific demos.", "source": "example.org" },
+    { "position": 3, "title": "Sample result three (offline fixture)", "link": "https://example.net/three", "snippet": "Results come back as ordinary rows you can join, filter and store.", "source": "example.net" }
+  ]
+}

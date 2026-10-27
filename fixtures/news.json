@@ -1,0 +1,6 @@
+{
+  "*": [
+    { "position": 1, "title": "Sample headline (offline fixture)", "link": "https://example.com/news/1", "snippet": "Offline fixture data for the news table.", "source": "Example News", "published": "2 hours ago" },
+    { "position": 2, "title": "Another sample headline (offline fixture)", "link": "https://example.org/news/2", "snippet": "Swap provider to 'serpapi' for live results.", "source": "Example Daily", "published": "1 day ago" }
+  ]
+}
