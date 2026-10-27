@@ -1,0 +1,22 @@
+.DS_Store
+.idea/
+.vscode/
+target/
+*.iml
+**/*.rs.bk
+*.o
+*.so
+*.a
+*.swp
+*.log
+.env
+.env.*
+.bash_history
+.config/
+cmake*/
+.direnv
+src/bindings.rs
+supabase/.branches
+supabase/.temp
+# Studio autosaves SQL editor tabs here, secrets included
+supabase/snippets/
