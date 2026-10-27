@@ -1,0 +1,68 @@
+name: Release
+
+# Builds the Wasm package and attaches it to a GitHub release, so hosted Supabase
+# projects can load it by URL. Adapted from supabase-community/postgres-wasm-fdw.
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+' # e.g. v0.1.0
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Wasm FDW Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path --profile minimal --default-toolchain 1.81.0
+          rustup target add wasm32-unknown-unknown
+          # --locked: newer versions of its dependencies don't build on Rust 1.81
+          cargo install cargo-component --version 0.13.2 --locked
+
+      - name: Build Wasm FDW
+        run: cargo component build --release --target wasm32-unknown-unknown
+
+      - name: Calculate Wasm file checksum
+        run: |
+          cd target/wasm32-unknown-unknown/release
+          sha256sum websearch_fdw.wasm > "$GITHUB_WORKSPACE/checksum.txt"
+
+      - name: Create README.txt
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          VERSION="${TAG#v}"
+          CHECKSUM=$(cut -d' ' -f1 checksum.txt)
+          cat > README.txt <<EOF
+          Load this release on Supabase with:
+
+          create server websearch_server
+            foreign data wrapper wasm_wrapper
+            options (
+              fdw_package_url 'https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/websearch_fdw.wasm',
+              fdw_package_name 'websearch:fdw',
+              fdw_package_version '${VERSION}',
+              fdw_package_checksum '${CHECKSUM}',
+              provider 'serpapi',
+              api_key_id '<vault secret id>'
+            );
+
+          Then create the foreign tables from sql/02_tables.sql.
+          EOF
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          make_latest: true
+          files: |
+            README.txt
+            checksum.txt
+            ./target/wasm32-unknown-unknown/release/websearch_fdw.wasm
