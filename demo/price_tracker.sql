@@ -25,6 +25,11 @@ create table price_snapshots (
 
 create index on price_snapshots (product_id, captured_at desc);
 
+-- On hosted Supabase, public tables are reachable through the REST API with the anon key.
+-- RLS with no policies blocks that; the SQL editor and pg_cron run as postgres and are unaffected.
+alter table products enable row level security;
+alter table price_snapshots enable row level security;
+
 insert into products (name, search_term, model_code, our_price) values
   ('Sony WH-1000XM5 Headphones',  'Sony WH-1000XM5', 'WH-1000XM5', 349.00),
   ('Keychron K2 Pro Keyboard',    'Keychron K2 Pro', 'K2 Pro',     109.00),
@@ -77,7 +82,8 @@ end $$;
 --      bulk lots and price-gouging resellers that still name the model
 --   2. take the 10 best-ranked of those and compare our price with their median
 --   3. say how many offers that is, so a median of one or two offers isn't trusted blindly
-create or replace view price_position as
+-- security_invoker makes the view respect RLS; by default a view reads tables as its owner.
+create or replace view price_position with (security_invoker = true) as
 with latest as (
   select s.*
   from price_snapshots s
