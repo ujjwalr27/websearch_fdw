@@ -2,7 +2,9 @@
 
 **Query the live web from Postgres, as if it were a table.**
 
-> TODO: one-sentence hook + demo GIF / screenshot here.
+One `SELECT` searches the web and returns rows you can join, store and schedule, with no backend service in between. It runs on stock Supabase, hosted or local.
+
+![A live web search run from the Supabase SQL editor, returning results as rows](docs/live-web-search.png)
 
 ```sql
 select title, price, source
@@ -20,7 +22,7 @@ Apps on PostgreSQL or Supabase usually need a separate backend service just to p
 - **store** them for later analysis,
 - **collect** them on a schedule with `pg_cron`.
 
-> TODO: 2–3 sentences on the problem from your own experience.
+Today, getting web data into a Postgres app means building and hosting a separate service: call a search API, parse the JSON, map it to your schema, write it back, and schedule all of that with yet another tool. For a feature as small as "show competitor prices next to our products", that's a lot of moving parts living outside the database where the data ends up anyway. `websearch_fdw` moves the whole loop into SQL.
 
 ## How it works
 
@@ -89,7 +91,9 @@ Live shopping results are noisy: look-alike models, spare parts that name the pr
 3. **Median of the top 10** of what's left, instead of the cheapest offer.
 4. **Confidence**: `high` (5+ offers), `medium` (3–4) or `low`, so a thin result isn't trusted blindly.
 
-> TODO: screenshot of `price_position` / price history chart.
+![price_position on hosted Supabase: each product's price against the market median, with a confidence rating](docs/price-position.png)
+
+*Live results on hosted Supabase. Dell is flagged `low` because only one offer survived the cleaning, so its median isn't trusted.*
 
 ## Project structure
 
@@ -103,6 +107,7 @@ Live shopping results are noisy: look-alike models, spare parts that name the pr
 ├── fixtures/                # offline results, keyed by lowercase query
 ├── sql/                     # setup, tables, examples
 ├── demo/price_tracker.sql   # end-to-end demo
+├── docs/                    # README screenshots
 ├── scripts/dev.sh           # local build + load
 ├── wit/, supabase-wrappers-wit/   # Wasm interface definitions (from the Supabase template)
 └── .github/workflows/release.yml  # tag v* → GitHub release with the .wasm
@@ -120,10 +125,6 @@ Live shopping results are noisy: look-alike models, spare parts that name the pr
 - [ ] Response cache table with TTL
 - [ ] Second live provider adapter
 - [ ] Images / local results tables
-
-## Team
-
-> TODO: names, roles, links. Hackathon: TODO.
 
 ## License
 
