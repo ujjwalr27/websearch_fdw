@@ -1,0 +1,6 @@
+# cargo-component 0.13.2 (the version the Wrappers host is built against) needs the
+# `wasm32-wasi` target, which Rust removed in 1.84, so pin the toolchain CI uses.
+[toolchain]
+channel = "1.81.0"
+targets = ["wasm32-unknown-unknown", "wasm32-wasi"]
+profile = "minimal"

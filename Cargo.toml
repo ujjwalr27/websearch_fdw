@@ -1,0 +1,26 @@
+[package]
+name = "websearch_fdw"
+version = "0.1.0"
+edition = "2021"
+description = "Query live web search results from Postgres as if they were tables"
+license = "Apache-2.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+strip = "debuginfo"
+lto = true
+
+[dependencies]
+wit-bindgen-rt = "0.26.0"
+serde_json = "1.0"
+
+[package.metadata.component]
+package = "websearch:fdw"
+
+[package.metadata.component.target]
+path = "wit"
+
+[package.metadata.component.target.dependencies]
+"supabase:wrappers" = { path = "./supabase-wrappers-wit" }
