@@ -119,13 +119,6 @@ Live shopping results are noisy: look-alike models, spare parts that name the pr
 2. In your Supabase project, add your API key on the Vault page as `websearch_api_key`.
 3. Fill the URL and checksum into [sql/01_setup_hosted.sql](sql/01_setup_hosted.sql) and run it, then [sql/02_tables.sql](sql/02_tables.sql).
 
-## Roadmap
-
-- [ ] `LIMIT` pushdown and pagination
-- [ ] Response cache table with TTL
-- [ ] Second live provider adapter
-- [ ] Images / local results tables
-
 ## License
 
 Apache-2.0. Wasm FDW scaffolding adapted from [supabase-community/postgres-wasm-fdw](https://github.com/supabase-community/postgres-wasm-fdw).
