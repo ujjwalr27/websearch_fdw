@@ -1,0 +1,35 @@
+{
+  "sony wh-1000xm5": [
+    { "position": 1, "title": "Sony WH-1000XM5 Wireless Noise Canceling Headphones, Black", "price": 329.99, "price_text": "$329.99", "source": "Northwind Electronics", "rating": 4.7, "reviews": 18432, "link": "https://example.com/northwind/wh-1000xm5" },
+    { "position": 2, "title": "Sony WH-1000XM5 Headphones (Silver)", "price": 339.0, "price_text": "$339.00", "source": "Acme Audio", "rating": 4.6, "reviews": 912, "link": "https://example.com/acme/wh-1000xm5" },
+    { "position": 3, "title": "Sony WH-1000XM5 Noise Cancelling Headphones", "price": 348.0, "price_text": "$348.00", "source": "Contoso Market", "rating": 4.7, "reviews": 2377, "link": "https://example.com/contoso/wh-1000xm5" },
+    { "position": 4, "title": "Sony WH-1000XM5 Wireless Headphones, Midnight Blue", "price": 359.99, "price_text": "$359.99", "source": "Tailspin Tech", "rating": 4.8, "reviews": 640, "link": "https://example.com/tailspin/wh-1000xm5" },
+    { "position": 5, "title": "Sony WH-1000XM5 + Travel Case Bundle", "price": 419.0, "price_text": "$419.00", "source": "Wingtip Gear", "rating": 4.5, "reviews": 88, "link": "https://example.com/wingtip/wh-1000xm5-bundle" },
+    { "position": 6, "title": "Sony WH-1000XM5 (Renewed)", "price": 229.0, "price_text": "$229.00", "source": "Fabrikam Outlet", "rating": 4.1, "reviews": 301, "link": "https://example.com/fabrikam/wh-1000xm5-renewed" },
+    { "position": 7, "title": "Sony WH-1000XM4 Wireless Noise Canceling Headphones", "price": 248.0, "price_text": "$248.00", "source": "Contoso Market", "rating": 4.6, "reviews": 9120, "link": "https://example.com/contoso/wh-1000xm4" },
+    { "position": 8, "title": "Replacement Ear Pads for Sony WH-1000XM5", "price": 24.99, "price_text": "$24.99", "source": "Wingtip Gear", "rating": 4.2, "reviews": 512, "link": "https://example.com/wingtip/wh-1000xm5-pads" }
+  ],
+  "keychron k2 pro": [
+    { "position": 1, "title": "Keychron K2 Pro QMK/VIA Wireless Mechanical Keyboard", "price": 99.0, "price_text": "$99.00", "source": "Acme Audio", "rating": 4.6, "reviews": 1544, "link": "https://example.com/acme/k2-pro" },
+    { "position": 2, "title": "Keychron K2 Pro, Hot-Swappable, Brown Switches", "price": 104.99, "price_text": "$104.99", "source": "Northwind Electronics", "rating": 4.5, "reviews": 655, "link": "https://example.com/northwind/k2-pro" },
+    { "position": 3, "title": "Keychron K2 Pro RGB Backlight Aluminum Frame", "price": 114.0, "price_text": "$114.00", "source": "Contoso Market", "rating": 4.7, "reviews": 489, "link": "https://example.com/contoso/k2-pro" },
+    { "position": 4, "title": "Keychron K2 Pro Mechanical Keyboard, Red Switches", "price": 109.99, "price_text": "$109.99", "source": "Tailspin Tech", "rating": 4.6, "reviews": 212, "link": "https://example.com/tailspin/k2-pro" },
+    { "position": 5, "title": "Keychron K2 Pro + Keycap Set Bundle", "price": 149.0, "price_text": "$149.00", "source": "Wingtip Gear", "rating": 4.4, "reviews": 37, "link": "https://example.com/wingtip/k2-pro-bundle" },
+    { "position": 6, "title": "Keychron Q2 Pro QMK/VIA Wireless Custom Keyboard", "price": 179.0, "price_text": "$179.00", "source": "Acme Audio", "rating": 4.7, "reviews": 822, "link": "https://example.com/acme/q2-pro" },
+    { "position": 7, "title": "Keychron K2 Max Wireless Mechanical Keyboard", "price": 109.0, "price_text": "$109.00", "source": "Northwind Electronics", "rating": 4.5, "reviews": 214, "link": "https://example.com/northwind/k2-max" },
+    { "position": 8, "title": "PBT Replacement Keycap Set for Keychron K2 Pro", "price": 19.99, "price_text": "$19.99", "source": "Tailspin Tech", "rating": 4.3, "reviews": 166, "link": "https://example.com/tailspin/k2-pro-keycaps" }
+  ],
+  "dell s2725qc": [
+    { "position": 1, "title": "Dell S2725QC 27\" 4K UHD USB-C Monitor", "price": 279.99, "price_text": "$279.99", "source": "Contoso Market", "rating": 4.5, "reviews": 5204, "link": "https://example.com/contoso/s2725qc" },
+    { "position": 2, "title": "Dell 27 Plus 4K USB-C Monitor - S2725QC", "price": 299.99, "price_text": "$299.99", "source": "Northwind Electronics", "rating": 4.4, "reviews": 801, "link": "https://example.com/northwind/s2725qc" },
+    { "position": 3, "title": "Dell S2725QC 27-Inch 4K Monitor with Speakers", "price": 289.0, "price_text": "$289.00", "source": "Tailspin Tech", "rating": 4.5, "reviews": 534, "link": "https://example.com/tailspin/s2725qc" },
+    { "position": 4, "title": "Dell S2725QC 4K IPS Monitor, 120Hz", "price": 309.0, "price_text": "$309.00", "source": "Acme Audio", "rating": 4.3, "reviews": 96, "link": "https://example.com/acme/s2725qc" },
+    { "position": 5, "title": "Dell S2725QC (Refurbished)", "price": 199.0, "price_text": "$199.00", "source": "Fabrikam Outlet", "rating": 4.0, "reviews": 143, "link": "https://example.com/fabrikam/s2725qc-refurb" },
+    { "position": 6, "title": "Dell S2725DC 27\" QHD 144Hz Monitor", "price": 249.99, "price_text": "$249.99", "source": "Tailspin Tech", "rating": 4.4, "reviews": 377, "link": "https://example.com/tailspin/s2725dc" },
+    { "position": 7, "title": "Dell UltraSharp 27 4K USB-C Hub Monitor", "price": 619.99, "price_text": "$619.99", "source": "Contoso Market", "rating": 4.6, "reviews": 1290, "link": "https://example.com/contoso/ultrasharp-27" },
+    { "position": 8, "title": "Dell Plus S2725QC 27\" 4K UHD Monitor (Import)", "price": 849.0, "price_text": "$849.00", "source": "Wingtip Gear", "rating": 3.9, "reviews": 12, "link": "https://example.com/wingtip/s2725qc-import" }
+  ],
+  "*": [
+    { "position": 1, "title": "Sample product (offline fixture)", "price": 19.99, "price_text": "$19.99", "source": "Example Store", "rating": 4.0, "reviews": 10, "link": "https://example.com/product" }
+  ]
+}
